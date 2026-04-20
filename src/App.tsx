@@ -569,7 +569,7 @@ function App() {
                   icon={<Palette size={40} />}
                   title="UI/UX Design"
                   desc="Creating user-centric designs that are both beautiful and functional."
-                  budget="Starting from ₹599"
+                  budget="Starting from ₹2999"
                   onClick={() => setActiveService('UI/UX Design')}
                   isActive={activeService === 'UI/UX Design'}
                 />
@@ -579,7 +579,7 @@ function App() {
                   icon={<Code size={40} />}
                   title="Web Development"
                   desc="Building responsive, high-performance websites using the latest technologies."
-                  budget="Starting from ₹999"
+                  budget="Starting from ₹7999"
                   onClick={() => setActiveService('Web Development')}
                   isActive={activeService === 'Web Development'}
                 />
@@ -589,7 +589,7 @@ function App() {
                   icon={<Video size={40} />}
                   title="Video Editing"
                   desc="Crafting captivating visual content that engages and inspires."
-                  budget="Starting from ₹499"
+                  budget="Starting from ₹1499"
                   onClick={() => setActiveService('Video Editing')}
                   isActive={activeService === 'Video Editing'}
                 />
@@ -835,7 +835,7 @@ function App() {
   )
 }
 
-function ServiceCard({ icon, title, desc, budget, onClick, isActive }: { icon: any, title: string, desc: string, budget: string, onClick?: () => void, isActive?: boolean }) {
+function ServiceCard({ icon, title, desc, budget, onClick, isActive }: { icon: React.ReactNode, title: string, desc: string, budget: string, onClick?: () => void, isActive?: boolean }) {
   const [mousePos, setMousePos] = useState({ x: 50, y: 50 })
   const cardRef = useRef<HTMLDivElement>(null)
 
@@ -857,7 +857,7 @@ function ServiceCard({ icon, title, desc, budget, onClick, isActive }: { icon: a
       style={{
         '--x': `${mousePos.x}%`,
         '--y': `${mousePos.y}%`
-      } as any}
+      } as React.CSSProperties}
     >
       <div className="service-card-glow" />
       <div className="service-icon">{icon}</div>
